@@ -8,7 +8,7 @@ terraform {
 }
 provider "azurerm" {
   features {}
-  subscription_id = "18b95931-6bb5-431b-a964-40d9c2211486"
+  subscription_id = "845670d0-6329-46a7-97a7-fe36dbdce51b"
 
 }
 resource "azurerm_resource_group" "Akhi_rg1" {
