@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "Akhi_rg1" {
 }
 resource "azurerm_virtual_network" "vnet_Akhi" {
   name                = "AkhiVnet"
-  address_space       = ["10.16.0.0/27"]
+  address_space       = ["10.17.0.0/27"]
   location            = azurerm_resource_group.Akhi_rg1.location
   resource_group_name = azurerm_resource_group.Akhi_rg1.name
 }
@@ -27,14 +27,14 @@ resource "azurerm_subnet" "subnet_frontend" {
   name                 = "frontend_Akhi"
   resource_group_name  = azurerm_resource_group.Akhi_rg1.name
   virtual_network_name = azurerm_virtual_network.vnet_Akhi.name
-  address_prefixes     = ["10.16.0.0/28"]
+  address_prefixes     = ["10.17.0.0/28"]
   depends_on           = [azurerm_virtual_network.vnet_Akhi]
 }
 resource "azurerm_subnet" "subnet_backend" {
   name                 = "backend_Akhi"
   resource_group_name  = azurerm_resource_group.Akhi_rg1.name
   virtual_network_name = azurerm_virtual_network.vnet_Akhi.name
-  address_prefixes     = ["10.16.0.16/28"]
+  address_prefixes     = ["10.17.0.16/28"]
   depends_on           = [azurerm_virtual_network.vnet_Akhi]
 }
 
